@@ -18,6 +18,10 @@ public final class UniteFiles {
 
     public void makeResultFile() throws IOException {
 
+        if (!file1.toFile().exists()||!file2.toFile().exists()){
+            return;
+        }
+
         try (BufferedReader bufferedReader1 = Files.newBufferedReader(file1);
              BufferedReader bufferedReader2 = Files.newBufferedReader(file2);
              BufferedWriter bufferedWrite = Files.newBufferedWriter(resultFile)){
